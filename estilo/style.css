@@ -1,0 +1,260 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=Swap');
+
+@font-face {
+    font-family: android;
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+
+
+
+
+/*
+A pseudo-classe CSS :root se equipara à raiz de uma árvore, que
+ por sua vez representa o documento. Aplicado ao HTML, 
+:root representa o elemento <html> e é idêntico ao seletor html
+ , exceto que sua especificidade é mais alta
+
+*/
+
+:root{
+
+    --cor0: rgb(154, 221, 154);
+    --cor1: rgb(119, 241, 119);
+    --cor2: rgb(102, 240, 102);
+    --cor3: rgb(238, 245, 238);
+    --cor4: rgb(21, 117, 21);
+    --cor5: rgb(15, 65, 15);
+
+    --fonte-padrao:arial,verdana, helvetica, sans-serif;
+    --fonte-destaque:'bebas neue', cursive;
+    --fonte-android: 'android',cursive;
+}
+
+
+/*Configuraçoes globais, ou seja envolve todos os elemtnos do estilo
+para que cumpram uma ordem exemplo margem 0px, adiciona-se o caracteri *{}
+e dentro da tag ecreve os elemntos exemplo os de baixo.*/
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+/*background-attachment (define se a imagem de fundo "rola" ou não com a tela);
+ background-position (define como e onde a imagem de fundo é posicionada);
+  background-clip (define a área do box onde a imagem de fundo é aplicada); 
+  background-origin (define a posição de origem da imagem no box);*/
+
+
+
+body{
+    background-color: rgb(154, 221, 154);
+    font-family: var(--fonte-padrao);    
+}
+
+a.externo::after{
+    content: "0020\1F517";
+    
+}
+
+
+
+header{
+    background-image:linear-gradient(to bottom, var(--cor1), var(--cor5));
+   min-height: 150px;
+   text-align: center;
+   padding-top: 40px;
+   /*BOX-SHADOW = a bordas aredondadas*/
+   box-shadow: 0px 10px 10px 10px black;
+}
+
+/* Quando o elemento receber um variavel exeplo: header>h1, o recebe" > " 
+sempre vai ser colocado em ambos, caso contrario ira alterara a funcionabilidade*/
+
+header > h1{
+    color: rgb(221, 221, 233);
+    font-weight: normal;
+    font-family: var(--fonte-destaque);
+    font-size: 3em;
+    margin-bottom: 15px;
+    text-shadow: 2PX 2PX 0PX black;
+ 
+}
+
+header > p{
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;
+    color: rgb(233, 232, 232);
+    max-width: 500px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: auto;
+    margin: bottom 30px;
+
+}
+
+nav{
+    background-color: rgb(154, 247, 154);
+    padding: 10px;
+    box-shadow: 0px 7px 7px black; 
+    border-radius: 10px; 
+
+}
+
+nav > a{
+    color: rgb(1, 14, 19);
+    padding: 10px;
+    text-decoration:none;
+    font-weight: bold;
+    transition-duration: 1s;
+    
+}
+
+nav > a:hover{
+    background-color: rgb(0, 255, 21);
+    color: var(--cor4);
+    border-radius: 30px;
+
+}
+
+
+main{
+    min-width: 300px;
+     max-width: 1000px;
+     margin: auto;
+     margin-bottom: 30px;
+     padding: 20px;
+    background-color:rgb(245, 245, 245) ;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.438);
+    border-bottom-left-radius:10px ;
+    border-bottom-right-radius: 10px;
+ 
+}
+
+
+main > h1{
+    color:var(--cor5);
+    font-family: var(--fonte-android);
+    font-size: 1.8em;
+   
+}
+
+main h2{
+    font-weight: normal;
+    font-family: var(--fonte-android);
+    color: var(--cor4);
+    font-size: 1.3em;
+    background-image: linear-gradient
+    (to right, var (--cor1), transpatent);
+    text-indent: 10px;
+}
+
+
+main p{
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    line-height: 1em;
+
+}
+
+main strong{
+    color: black;
+    background-color: rgb(0, 255, 13);
+    border-radius: 20px;
+}
+
+
+main > img{
+    width:100px ;
+
+}
+
+main a{
+    text-decoration: none;
+    transition-duration: 1s;
+    background-color: rgb(154, 197, 247);
+    
+}
+
+main a:hover{
+    background-color: rgb(255, 0, 179);
+    color: var(--cor4);
+    border-radius: 30px;
+    transition-duration: 2.5s;
+
+}
+
+main img.pequena{
+    background-color: rgb(105, 128, 231);
+    /* O atribuito width define o
+     tamanho horizontal ocupado por uma tag na tela do navegador. 
+     Esta dimensão incorpora todos os elementos internos do box model,
+      incluíndo o atribuito padding e o atributo border .*/
+    max-width: 350px;
+    display: block;
+    margin: auto;}
+
+    div.video{
+        background-color: blueviolet;
+        margin: 0px -20px 0px -20px;
+        padding: 20px;
+        padding-bottom: 59%;
+        position: relative;
+    }
+
+    div.video>iframe{
+        border-radius: 10px;
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        width: 90%;
+        height: 90%;
+
+    }
+
+    aside {
+        background-color: rgb(114, 224, 114);
+        padding: 10px;
+        border-radius: 15px;
+        box-shadow: 3px 3px 8px, black;
+    }
+
+    aside h3{
+        text-align: center;
+        color: white;
+        background-image: linear-gradient(to bottom, rgb(4, 126, 41), rgb(35, 247, 15));
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    aside > ul{
+        /*pocição da lista, ou dos caracteris da lista, pode ser uma bolinha, um x, um numero
+        independente do iten*/
+        list-style-type: "\2714\0020\0020";
+        /*para poder adicionar caracteris na lista*/
+
+        list-style-position: inside;
+        /*Quantidade de coluas que vai ter na pagina, ou seja
+        divide os itens em colunas*/
+        columns: 2;
+
+    }
+
+
+footer{
+    text-align: center;
+    border:10px solid rgb(1, 126, 28);
+    padding:10px;}
+
+    footer a{
+        color: rgb(236, 231, 231);
+        text-decoration: none;
+    }
+
+    footer a:hover{
+        text-decoration: underline;
+        color: blue;
+    }
